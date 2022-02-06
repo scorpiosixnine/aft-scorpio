@@ -1,0 +1,6 @@
+[submodule "scorpio-utilities"]
+	path = scorpio-utilities
+	url = git@githubasscorpio:scorpiosixnine/scorpio-utilities
+[submodule "sdks/skyrim-sdk"]
+	path = sdks/skyrim-sdk
+	url = git@githubasscorpio:scorpiosixnine/skyrim-sdk
