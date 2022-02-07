@@ -6,7 +6,7 @@ Scriptname ScorpioAFTStubs Extends TopicInfo Hidden
 Function Fragment_4(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Debug.Notification("End")
+(pQuest as ScorpioAFTQuest).EditCurrent(akSpeaker)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -15,7 +15,7 @@ EndFunction
 Function Fragment_5(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Debug.Notification("Begin")
+(pQuest as ScorpioAFTQuest).EditCurrent(akSpeaker)
 ;END CODE
 EndFunction
 ;END FRAGMENT
