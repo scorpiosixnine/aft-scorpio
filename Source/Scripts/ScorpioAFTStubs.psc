@@ -15,7 +15,7 @@ EndFunction
 Function Fragment_5(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-(pQuest as ScorpioAFTQuest).EditCurrent(akSpeaker)
+(pQuest as ScorpioAFTQuest).CheckQuest()
 ;END CODE
 EndFunction
 ;END FRAGMENT
