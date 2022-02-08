@@ -3,3 +3,6 @@ Scriptname TweakFollowerScript extends Quest Conditional
 
 Function ViewInventory(ObjectReference follower, Int type=0)
 EndFunction
+
+ReferenceAlias Function FindAlias(ObjectReference f)
+EndFunction

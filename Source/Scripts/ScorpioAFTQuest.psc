@@ -4,25 +4,32 @@ Quest Property pAFTQuest Auto
 
 Function CheckQuest()
   if !pAFTQuest
-    Debug.Notification("Quest Missing")
-    Form f = Game.GetFormFromFile(0x12CE,"AmazingFollowerTweaks.esp")
-    if f
-      Debug.Trace("Found Form")
-    endif
-
-    pAFTQuest = f as Quest
+    Debug("AFT Quest Missing")
+    pAFTQuest = Game.GetFormFromFile(0x12CE,"AmazingFollowerTweaks.esp") as Quest
     if pAFTQuest
-      Debug.Notification("Found Quest")
+      Debug("Found AFT Quest")
     endif
   endif
 EndFunction
 
 Function EditCurrent(ObjectReference akSpeakerRef)
-  Debug.Notification("Edit Current")
+  pDebugMode = true
+
   TweakFollowerScript aft = pAFTQuest as TweakFollowerScript
   if aft
-    Debug.Notification("Viewing Outfit")
-    aft.ViewInventory(akSpeakerRef, 1)
+    TweakInventoryControl control = aft.findAlias(akSpeakerRef) as TweakInventoryControl
+    if control
+      if control.IsHomeOutfitInUse()
+        Debug("Viewing Home")
+        control.ViewHome()
+      elseif control.IsCityOutfitInUse()
+        Debug("Viewing City")
+        control.ViewCity()
+      elseif control.IsStandardOutfitInUse()
+        Debug("Viewing Standard")
+        control.ViewStandard()
+      endif
+    endif
   endif
 
 endFunction
